@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<pre>
+
+ランニング等移動軌跡を記録します。
+設定距離(デフォールト1km)もしくは設定時間(デフォールト60分)毎にオートラップでマークを立てます。
+設定速度を下回るとオートポーズ状態になります。また速度に回復すると記録を再開します。
+実験用にGPSの感度等の設定ができるようになっています。
+
+さらに、
+登録地点の通過を記録できます。
+予め緯度経度の登録ファイルを読み込みエリアへのin/outを記録します。
+登録ファイルは、iTuneやfinderのファイル共有経由、もしくは、
+webサイトからダウンロードします。(設定ページのDownload Location File)
+plist形式で以下の情報です。
+{
+	locations = (
+		{
+			name = "point1";
+			latitude = 35.692641;
+			longitude = 139.775503;
+		},
+		{
+			name = "point2";
+			latitude = 35.69157;
+			longitude = 139.771231;
+		},
+	);
+	filenname = "koukyo.plist";
+	url = "http://www.com/cgi-bin/koukyo.cgi";
+	sequence = "";
+}
+
+この通過記録を設定ファイルで指定したwebページに送り、共通管理することができます。
+登録地点の送信モードとしてランダム・シーケンシャル・セグメント(シーケンシャルのグループ化)があります。
+webへの送信は以下のフォーマットです。
+http://www/cgi?position=pos3-0&now=on&data=
+登録地点(0から)が"pos3-0"の3の部分、設定で指定するMember(0から)が"pos3-0"の0の部分です。
+http://www/cgi?position=note-0&data=enter-3
+これははコメントで"enter-3"の3の部分が地点で、"enter"と"leave"で出入りを示します。
+
+位置情報取得・登録地点の送信はバックグラウンドでも行います。
+バックグラウンドに入ったときには、記録データを保存します。
+フォアグラウンドに戻ったときに、データは回復し、バックグラウンド中に取得したデータも追加されています。
+メモリ制限等でバックグラウンド中にアプリケーションが終了した場合は、
+その時点までのデータが保存されています。(保存間隔の設定もあります、それより前に保存されているようです)
+
+ダッシュボード表示にランニング中によく見る情報を集めました。
+
+保存したファイルは、ファイル共有でMac等に転送可能です。
+また、ファイル共有で登録地点のコピーも行えます。
+
+当該webページを開くこともできます。
+
+Credit
+App uses icons designed from "ICOOON MONO".
+
+</pre>
+
+<a href="RunLogger.sample.zip"> サンプルデータ(perl script) </a>
+<br>
+
+<table border=1><tr><td>
+<img src="RunLog-main.png" width=200px>
+</td><td>
+<img src="RunLog-pref.png" width=200px>
+</td><td>
+<img src="RunLog-dashboard.png" width=200px>
+</td><td>
+<img src="RunLog-console.png" width=200px>
+</td></tr></table>
+
+</body>
+</html>

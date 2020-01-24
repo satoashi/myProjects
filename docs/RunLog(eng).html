@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<pre>
+GPS location recorder. Esspecially running/warlking.
+
+- Auto Lap by Distance and Time. ( set in Preference )
+- Auto Pause. ( set in Preference )
+- Other settting, accuracy of GPS, etc.
+
+And,
+- Read file data of CheckPoints/MileStone.
+- Record in/out time of CheckPoint.
+- Check Point file is download from Mac/PC with file share
+  or download from web site. ( "Download Locatin File" in Preference )
+- File for is plist, information is below.
+{
+	locations = (
+		{
+			name = "point1";
+			latitude = 35.692641;
+			longitude = 139.775503;
+		},
+		{
+			name = "point2";
+			latitude = 35.69157;
+			longitude = 139.771231;
+		},
+	);
+	filenname = "koukyo.plist";
+	url = "http://www.com/cgi-bin/koukyo.cgi";
+	sequence = "";
+}
+
+Record of CheckPoint can be sent to web site.
+In order to share running's location.
+URL format is below with GET method.
+http://www/cgi?position=pos3-0&now=on&data=
+Position(0thru) is 3 in "pos3-0", 0 in "pos3-0" is Member(0thru).
+http://www/cgi?position=note-0&data=enter-3
+This is comment, 3 in "enter-3" means Position "enter" and "leave" shows in/out.
+
+Location recording and reporting is running during background state.
+Internal data is saved at entering background.
+After returning to foreground, data before background and during background are recoverd.
+If application is terminated, almost locations in background could be saved.
+
+Dashboard show useful data during running/walking.
+
+Saved file is accessable file share from Mac/PC.
+And CheckPoint file is transfer by file share.
+
+App can open web page with safari.
+
+
+Credit
+App uses icons designed from "ICOOON MONO".
+
+</pre>
+
+<a href="RunLogger.sample.zip"> Example data and web script(perl script) </a>
+<br>
+
+<table border=1><tr><td>
+<img src="RunLog-main.png" width=200px>
+</td><td>
+<img src="RunLog-pref.png" width=200px>
+</td><td>
+<img src="RunLog-dashboard.png" width=200px>
+</td><td>
+<img src="RunLog-console.png" width=200px>
+</td></tr></table>
+
+</body>
+</html>

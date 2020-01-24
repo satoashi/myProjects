@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<pre>
+
+QR code and bar cord reader.
+Application sends read data to web site in order to calculate and analysis.
+
+Data format to web is
+http://xxx.cgi?code=999&time=YYYYMMDDhhmmss&name=YYY.
+
+URL is available to read with QR code reader.
+
+Parameters except "code" can be omitted.
+Parameter "name" is useful to identify UE.
+
+POST and GET are possible to select.
+Also encoding is available.
+
+Data is sent to web site and simultanously save into memory and disk in iPhone.
+Saved data is possible to send to web, again.
+
+Retry sending is scheduled.
+
+Test mode is to check without send and save data.
+
+In case of camera disabling, please set permittion.
+And you can see demo view.
+
+Adding emergency direct input field.
+Disabled sleep timer to continuously using.
+
+App is useful at marathon race.
+It can show QR of destination URL in order to copy it to others.
+
+
+Credit
+App uses icons designed from "Flaticon", "ICOOON MONO".
+
+</pre>
+
+<a href="qr2web.sample.zip"> Sample data(perl script) </a>
+<br>
+
+<table border=1><tr><td>
+<img src="qr-main.png" width=200px>
+</td><td>
+<img src="qr-pref.png" width=200px>
+</td><td>
+<img src="qr-scan.png" width=200px>
+</td><td>
+<img src="qr-upload.png" width=200px>
+</td></tr></table>
+
+</body>
+</html>
