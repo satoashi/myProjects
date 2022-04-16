@@ -42,6 +42,7 @@ http://www/cgi?position=pos3-0&now=on&data=
 登録地点(0から)が"pos3-0"の3の部分、設定で指定するMember(0から)が"pos3-0"の0の部分です。
 http://www/cgi?position=note-0&data=enter-3
 これははコメントで"enter-3"の3の部分が地点で、"enter"と"leave"で出入りを示します。
+設定画面でフォーマットを指定できるようにしました。
 
 位置情報取得・登録地点の送信はバックグラウンドでも行います。
 バックグラウンドに入ったときには、記録データを保存します。
@@ -56,6 +57,17 @@ http://www/cgi?position=note-0&data=enter-3
 
 当該webページを開くこともできます。
 
+走行距離を指定したwebページに送る機能を追加しました。
+webページは通過記録とは別ページになり、独自に設定します。
+HTTPパラメータのラベルを指定できます。ページに合わせて設定してください。
+初期値は、
+名前、日付、距離、メモを想定して"id","date","distance","place"です。
+
+Health Kitをオンにすると、ランニング&ウォーキング距離、歩数を取得して送信することができます。
+ラベルは適宜設定してください。
+
+空白のラベル項目は送信しません。
+
 Credit
 App uses icons designed from "ICOOON MONO".
 
@@ -63,11 +75,17 @@ App uses icons designed from "ICOOON MONO".
 
 <a href="RunLogger.sample.zip"> サンプルデータ(perl script) </a>
 <br>
+<a href="RunLogger.pdf">画面説明</a>
+<br>
 
 <table border=1><tr><td>
 <img src="RunLog-main.png" width=200px>
 </td><td>
 <img src="RunLog-pref.png" width=200px>
+</td><td>
+<img src="RunLog-pref2.png" width=200px>
+</td><td>
+<img src="RunLog-pref3.png" width=200px>
 </td><td>
 <img src="RunLog-dashboard.png" width=200px>
 </td><td>
