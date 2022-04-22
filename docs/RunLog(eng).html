@@ -44,7 +44,7 @@ http://www/cgi?position=note-0&data=enter-3
 This is comment, 3 in "enter-3" means Position "enter" and "leave" shows in/out.
 Now formats are customizable in preference page.
 
-Location recording and reporting is running during background state.
+Location recording and reporting are working during background state.
 Internal data is saved at entering background.
 After returning to foreground, data before background and during background are recoverd.
 If application is terminated, almost locations in background could be saved.
@@ -57,15 +57,34 @@ And CheckPoint file is transfer by file share.
 App can open web page with safari.
 
 Now, adding different data to send.
-It's available to send distance of your running&walking.
-Web page is different. You need to set.
+App can send running distance of your running&walking.
+Web page is different. You need to set other than milestone site.
 In preference page, HTTP parameter names are available to change.
 Default is "id", "date", "distance" and "place".
 Blank label of data means "no send".
 
-If you set on for Health Kit in main preference page.
-Your can get running&walking distance and steps from Health Kit.
-Theses data are available to send. Need change parameter name.
+Now, Health Kit distance is available.
+Your can get running&walking distance and step count from Health Kit.
+Then data are available to send.
+Need change parameter names. Default is blank, which means "do not send".
+If you only use GPS tracking, Health Kit access permission is not necessary.
+
+Split preference page.
+1) Basic preference, about GPS sensiti vity, milestone in/out error distance, etc.
+2) Send Milestone setting. This transmission is automatically.
+3) Send distance record. This transmission is manually. Send from this page.
+
+
+Ver.1.5
+Other than milestone tracking, total running distance is available to send to web site.
+Site and format are different. Set-up at preference pages, below.
+
+Make it flexible, HTTP format and parameter labels are user definable.
+Split setting page to three pages. Main preference, for milestone tracking, for distance record.
+
+Application can use Health Kit, running&walking distance and step count.
+Instead of GPS distance, you can send Health Kit information.
+
 
 Credit
 App uses icons designed from "ICOOON MONO".
